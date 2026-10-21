@@ -1,0 +1,199 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate | Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h2>StudyMate</h2>
+                    <p>Student Workspace</p>
+                </div>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a href="#timetable" class="nav-link">
+                    <span class="nav-icon">▣</span>
+                    Study Timetable
+                </a>
+
+                <a href="#tasks" class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    My Tasks
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-tip">
+                    <span>💡</span>
+                    <h3>Study Tip</h3>
+                    <p>Small steps every day lead to big achievements.</p>
+                </div>
+
+                <button id="themeToggle" class="theme-toggle" type="button">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeLabel">Dark Mode</span>
+                </button>
+
+                <p class="sidebar-footer">StudyMate © 2026</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <section class="topbar">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+                    <h1>Welcome to StudyMate!</h1>
+                    <p class="topbar-description">
+                        Plan your day, organize your studies, and reach your goals.
+                    </p>
+                </div>
+                <div class="topbar-badge">📚 Keep Learning</div>
+            </section>
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="content-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">OVERVIEW</p>
+                        <h2>My Dashboard</h2>
+                        <p>Here is your current study progress.</p>
+                    </div>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-card total-card">
+                        <div class="summary-icon">📋</div>
+                        <p>Total Tasks</p>
+                        <h3 id="totalTasks">0</h3>
+                        <span>All your tasks</span>
+                    </div>
+
+                    <div class="summary-card completed-card">
+                        <div class="summary-icon">✅</div>
+                        <p>Completed Tasks</p>
+                        <h3 id="completedTasks">0</h3>
+                        <span>Tasks finished</span>
+                    </div>
+
+                    <div class="summary-card pending-card">
+                        <div class="summary-icon">⏳</div>
+                        <p>Pending Tasks</p>
+                        <h3 id="pendingTasks">0</h3>
+                        <span>Tasks to complete</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study Timetable -->
+            <section id="timetable" class="content-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">PLAN YOUR LEARNING</p>
+                        <h2>My Study Timetable</h2>
+                        <p>Create and manage your study sessions.</p>
+                    </div>
+                </div>
+
+                <form id="sessionForm" class="form-grid">
+                    <div class="form-group">
+                        <label for="subjectInput">Subject</label>
+                        <input
+                            type="text"
+                            id="subjectInput"
+                            placeholder="e.g. Mathematics"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studyTime">Study Time</label>
+                        <input type="time" id="studyTime" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="topicInput">Topic</label>
+                        <input
+                            type="text"
+                            id="topicInput"
+                            placeholder="e.g. Matrices and determinants"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="addSessionBtn" class="primary-btn" type="submit">
+                            + Add Study Session
+                        </button>
+                    </div>
+                </form>
+
+                <div class="list-heading">
+                    <h3>Your Study Sessions</h3>
+                </div>
+
+                <div id="timetableList" class="item-list"></div>
+            </section>
+
+            <!-- Tasks -->
+            <section id="tasks" class="content-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">STAY ORGANIZED</p>
+                        <h2>My Tasks</h2>
+                        <p>Add tasks and keep track of your progress.</p>
+                    </div>
+                </div>
+
+                <form id="taskForm" class="task-form">
+                    <label class="visually-hidden" for="taskInput">New task</label>
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What do you need to do?"
+                        required
+                    >
+                    <button id="addTaskBtn" class="primary-btn" type="submit">
+                        + Add Task
+                    </button>
+                </form>
+
+                <div class="list-heading">
+                    <h3>Your Task List</h3>
+                </div>
+
+                <div id="taskList" class="item-list"></div>
+            </section>
+
+            <footer class="main-footer">
+                Made for your learning journey · StudyMate 2026
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
