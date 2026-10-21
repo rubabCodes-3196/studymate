@@ -1,206 +1,232 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyMate | Student Dashboard</title>
+    <title>StudyMate - Student Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="app-layout">
+    <div class="app-container">
 
-        <!-- Left Sidebar -->
+        <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="brand">
-                <div class="brand-icon">S</div>
-                <div>
-                    <h2>StudyMate</h2>
-                    <p>Student Workspace</p>
-                </div>
+            <div class="logo">
+                <h2>📚 StudyMate</h2>
             </div>
 
-            <p class="menu-heading">MAIN MENU</p>
-
-            <nav class="sidebar-nav">
-                <a href="#dashboard" class="nav-link active">
-                    <span class="nav-icon">▦</span>
-                    Dashboard
+            <nav class="navigation">
+                <a href="#" class="nav-link active" data-section="dashboard">
+                    🏠 Dashboard
                 </a>
 
-                <a href="#timetable" class="nav-link">
-                    <span class="nav-icon">▣</span>
-                    Study Timetable
+                <a href="#" class="nav-link" data-section="timetable">
+                    📅 Study Timetable
                 </a>
 
-                <a href="#tasks" class="nav-link">
-                    <span class="nav-icon">✓</span>
-                    My Tasks
+                <a href="#" class="nav-link" data-section="tasks">
+                    ✅ My Tasks
                 </a>
             </nav>
 
-            <div class="sidebar-bottom">
-                <div class="sidebar-tip">
-                    <span>💡</span>
-                    <h3>Study Tip</h3>
-                    <p>Small steps every day lead to big achievements.</p>
-                </div>
-
-                <button id="themeToggle" class="theme-toggle" type="button">
-                    <span id="themeIcon">🌙</span>
-                    <span id="themeLabel">Dark Mode</span>
-                </button>
-
-                <p class="sidebar-footer">StudyMate © 2026</p>
+            <div class="sidebar-footer">
+                <p>Study Smart, Not Hard!</p>
             </div>
         </aside>
+
 
         <!-- Main Content -->
         <main class="main-content">
 
-            <section class="topbar">
+            <!-- Top Header -->
+            <header class="top-header">
                 <div>
-                    <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
-                    <h1>Welcome to StudyMate!</h1>
-                    <p class="topbar-description">
-                        Plan your day, organize your studies, and reach your goals.
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p>Welcome to your personal study space!</p>
+                </div>
+
+                <button id="themeToggle" class="theme-button" type="button">
+                    🌙 Dark Mode
+                </button>
+            </header>
+
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+
+                <div class="welcome-card">
+                    <h2>Welcome to StudyMate! 🎓</h2>
+                    <p>
+                        Organize your tasks, manage your timetable,
+                        and make your study routine better.
                     </p>
                 </div>
-                <div class="topbar-badge">📚 Keep Learning</div>
+
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card">
+                        <h3>Total Tasks</h3>
+                        <p id="totalTasks">0</p>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Pending Tasks</h3>
+                        <p id="pendingTasks">0</p>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Completed Tasks</h3>
+                        <p id="completedTasks">0</p>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Study Sessions</h3>
+                        <p id="totalSessions">0</p>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-info">
+                    <h2>Study Tips 💡</h2>
+                    <ul>
+                        <li>Make a daily study plan.</li>
+                        <li>Complete important tasks first.</li>
+                        <li>Take short breaks while studying.</li>
+                        <li>Review your lessons regularly.</li>
+                    </ul>
+                </div>
+
             </section>
 
-            <!-- Dashboard -->
-            <section id="dashboard" class="content-section">
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow">OVERVIEW</p>
-                        <h2>My Dashboard</h2>
-                        <p>Here is your current study progress.</p>
-                    </div>
-                </div>
 
-                <div class="summary-grid">
-                    <div class="summary-card total-card">
-                        <div class="summary-icon">📋</div>
-                        <p>Total Tasks</p>
-                        <h3 id="totalTasks">0</h3>
-                        <span>All your tasks</span>
-                    </div>
-
-                    <div class="summary-card completed-card">
-                        <div class="summary-icon">✅</div>
-                        <p>Completed Tasks</p>
-                        <h3 id="completedTasks">0</h3>
-                        <span>Tasks finished</span>
-                    </div>
-
-                    <div class="summary-card pending-card">
-                        <div class="summary-icon">⏳</div>
-                        <p>Pending Tasks</p>
-                        <h3 id="pendingTasks">0</h3>
-                        <span>Tasks to complete</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Study Timetable -->
-            <section id="timetable" class="content-section">
-                <div class="section-heading">
-                    <div>
-                        <p class="eyebrow">PLAN YOUR LEARNING</p>
-                        <h2>My Study Timetable</h2>
-                        <p>Create and manage your study sessions.</p>
-                    </div>
-                </div>
-
-                <form id="sessionForm" class="form-grid">
-                    <div class="form-group">
-                        <label for="subjectInput">Subject</label>
-                        <input
-                            type="text"
-                            id="subjectInput"
-                            placeholder="e.g. Mathematics"
-                            required
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="studyTime">Study Time</label>
-                        <input type="time" id="studyTime" required>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="topicInput">Topic</label>
-                        <input
-                            type="text"
-                            id="topicInput"
-                            placeholder="e.g. Matrices and determinants"
-                            required
-                        >
-                    </div>
-
-                    <div class="form-actions">
-                        <button id="addSessionBtn" class="primary-btn" type="submit">
-                            + Add Study Session
-                        </button>
-                    </div>
-                </form>
-
-                <div class="list-heading">
-                    <h3>Your Study Sessions</h3>
-                </div>
-
-                <div id="timetableList" class="item-list"></div>
-            </section>
-
-            <!-- Tasks -->
+            <!-- My Tasks Section -->
             <section id="tasks" class="content-section">
+
                 <div class="section-heading">
-                    <div>
-                        <p class="eyebrow">STAY ORGANIZED</p>
-                        <h2>My Tasks</h2>
-                        <p>Add tasks and keep track of your progress.</p>
-                    </div>
+                    <h2>My Tasks ✅</h2>
+                    <p>Add, search, filter, and manage your study tasks.</p>
                 </div>
 
-                <form id="taskForm" class="task-form">
-                    <label class="visually-hidden" for="taskInput">New task</label>
+                <!-- Add Task Form -->
+                <form id="taskForm" class="input-form">
+
                     <input
                         type="text"
                         id="taskInput"
-                        placeholder="What do you need to do?"
+                        class="search-input"
+                        placeholder="Enter your task..."
                         required
                     >
-                    <button id="addTaskBtn" class="primary-btn" type="submit">
+
+                    <select id="taskPriority" class="search-input">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+
+                    <button type="submit" class="primary-button">
                         + Add Task
                     </button>
+
                 </form>
 
-                <div class="list-heading">
-                    <h3>Your Task List</h3>
-                </div>
-                
-<input
-  type="text"
-  id="searchTask"
-  placeholder="Search your tasks..."
-  class="search-input"
-/>
 
-                <div id="taskList" class="item-list"></div>
+                <!-- Search Tasks -->
+                <div class="task-controls">
+
+                    <input
+                        type="text"
+                        id="searchTask"
+                        class="search-input"
+                        placeholder="🔍 Search tasks..."
+                    >
+
+                    <!-- Filter Tasks -->
+                    <select id="taskFilter" class="search-input">
+                        <option value="all">All Tasks</option>
+                        <option value="pending">Pending Tasks</option>
+                        <option value="completed">Completed Tasks</option>
+                        <option value="high">High Priority</option>
+                    </select>
+
+                </div>
+
+
+                <!-- Task List -->
+                <div id="taskList" class="item-list">
+                    <!-- Tasks will be added here using JavaScript -->
+                </div>
+
             </section>
 
-            <footer class="main-footer">
-                Made for your learning journey · StudyMate 2026
-            </footer>
+
+            <!-- Study Timetable Section -->
+            <section id="timetable" class="content-section">
+
+                <div class="section-heading">
+                    <h2>Study Timetable 📅</h2>
+                    <p>Plan your study sessions and manage your routine.</p>
+                </div>
+
+
+                <!-- Add Study Session Form -->
+                <form id="sessionForm" class="input-form">
+
+                    <input
+                        type="text"
+                        id="subjectInput"
+                        class="search-input"
+                        placeholder="Enter subject name..."
+                        required
+                    >
+
+                    <select id="dayInput" class="search-input" required>
+                        <option value="">Select Day</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+
+                    <input
+                        type="time"
+                        id="timeInput"
+                        class="search-input"
+                        required
+                    >
+
+                    <button type="submit" class="primary-button">
+                        + Add Session
+                    </button>
+
+                </form>
+
+
+                <!-- Timetable List -->
+                <div id="timetableList" class="item-list">
+                    <!-- Study sessions will be added here using JavaScript -->
+                </div>
+
+            </section>
 
         </main>
+
     </div>
 
+
+    <!-- JavaScript File -->
     <script src="script.js"></script>
+
 </body>
 </html>
+
 
